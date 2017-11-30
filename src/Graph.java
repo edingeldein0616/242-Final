@@ -1,14 +1,18 @@
 import java.util.*;
 
+/**
+* A class that implements the data structures and and methods needed to 
+* create a graph.
+*/
 public class Graph implements GraphInterface
 {
 	/* * * * * * * * * * * * * * * * * * * * * * * *
-	* 				Properties  
+	* 				Properties
 	* * * * * * * * * * * * * * * * * * * * * * * */
 	public LinkedList<Vertex> verts;
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
-	* 				Constructor  
+	* 				Constructor
 	* * * * * * * * * * * * * * * * * * * * * * * */
 	public Graph()
 	{
@@ -16,7 +20,7 @@ public class Graph implements GraphInterface
 	}	
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
-	* 				Accessors  
+	* 				Accessors
 	* * * * * * * * * * * * * * * * * * * * * * * */
 	
 	/**
@@ -60,7 +64,7 @@ public class Graph implements GraphInterface
 		LinkedList<Edge> allEdges = new LinkedList<Edge>();
 		for(Vertex vert : this.verts)
 		{
-			allEdges.add(vert.edges);
+			allEdges.addAll(vert.edges);
 		}
 		return allEdges;
 	}
@@ -68,16 +72,19 @@ public class Graph implements GraphInterface
 	/**
 	* Searches the verts array for a vertex whos name matches the input parameter.
 	* @param name The name of the vertex to retrieve.
+	* @param printNotFound Prints console output when vertex isn't found if true.
 	* @return The vertex. Null if it does not exist.
 	*/
-	public Vertex getVertex(String name)
+	public Vertex getVertex(String name, boolean printNotFound)
 	{
 		for(Vertex vert : this.verts)
 		{
 			if(vert.name.equals(name))
 				return vert;
 		}
-		System.out.println("Vertex with name \"" + name + "\" does not exist in the graph.");
+		if(printNotFound)
+			System.out.println("Vertex with name \"" + name + "\" does not exist in the graph.");
+		
 		return null;
 	}
 
@@ -88,10 +95,10 @@ public class Graph implements GraphInterface
 	*/
 	public int getDegree(String name)
 	{
-		Vertex vert = getVertex(name);
+		Vertex vert = getVertex(name, true);
 		if(vert != null)
 		{
-			return vert.degree;
+			return vert.degree();
 		} 
 		System.out.println("\tCannot retrieve the degree.");
 		return -1;
@@ -104,7 +111,7 @@ public class Graph implements GraphInterface
 	*/
 	public LinkedList<Edge> getEdges(String name)
 	{
-		Vertex vert = getVertex(name);
+		Vertex vert = getVertex(name, true);
 		if(vert != null)
 		{
 			return vert.edges;
@@ -121,7 +128,7 @@ public class Graph implements GraphInterface
 	public LinkedList<Vertex> getAdjacent(String name)
 	{
 		LinkedList<Vertex> adjacencies = new LinkedList<Vertex>();
-		Vertex vert = getVertex(name);
+		Vertex vert = getVertex(name, true);
 
 		if(vert == null)
 		{
@@ -138,18 +145,22 @@ public class Graph implements GraphInterface
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
-	* 				Mutators  
+	* 				Mutators
 	* * * * * * * * * * * * * * * * * * * * * * * */
 
 	/**
 	* Creates and adds a vertex to the verts list of the current graph.
+	* If the vertex already exists in the graph, it will not be added.
 	* @param name The name of the vertex to be created and added.
 	*/
 	public void addVertex(String name)
 	{
-		name = String.replaceAll("^\"|\"$", "");
-		Vertex vert = new Vertex(name);
-		this.verts.add(vert);
+		Vertex vert = getVertex(name, false);
+		if(vert == null)
+		{
+			vert = new Vertex(name);
+			this.verts.add(vert);
+		}
 	}
 
 	/**
@@ -162,5 +173,17 @@ public class Graph implements GraphInterface
 		Edge edge = new Edge(end1, end2, weight);
 		end1.edges.add(edge);
 		end2.edges.add(edge);
+	}
+
+	/**
+	* Sorts the edges of all of the verticies in the graph from lowest to highest weight.
+	* @output The edges list of each vertex int the graph will be sorted in ascending order of weight.
+	*/
+	public void sortEdges()
+	{
+		for(Vertex vert : this.verts)
+		{
+			vert.sortEdges();
+		}
 	}
 }
