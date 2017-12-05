@@ -79,6 +79,21 @@ public class Helper
 
 	}
 
+	/**
+	* Prints the edges array of the input graph.
+	* @param The graph whose edges will be printed to the console.
+	* @output All of the edges printed to the console.
+	*/
+	public static void printGraphEdges(Graph graph)
+	{
+		int i = 1;
+		for(Edge edge : graph.edges)
+		{
+			System.out.println(i + ": " + edge.toString());
+			i++;
+		}
+	}
+
 	public static void searchAllGraphVerticies(Graph graph) {
 		LinkedList<Vertex> verts = graph.verts;
 
