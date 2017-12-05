@@ -160,6 +160,20 @@ public class Graph implements GraphInterface
 		return newEdges;
 	}
 
+	/**
+	* Returns the total weight of the graph's edges.
+	* @return An integer representing the total weight of the edges of the graph.
+	*/
+	public int totalWeight()
+	{
+		int total = 0;
+		for(Edge e : this.edges)
+		{
+			total += e.weight;
+		}
+		return total;
+	}
+
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Mutators
 	* * * * * * * * * * * * * * * * * * * * * * * */
@@ -251,15 +265,13 @@ public class Graph implements GraphInterface
 			Vertex src = edge.endpoint1;
 			Vertex dest = edge.endpoint2;			
 
-			// Remove the components to which the endpoints belong.
+			// Find the index of the components that contain the endpoints
 			int srcIndex = indexOfComponent(compSet, src);
 			int destIndex = indexOfComponent(compSet, dest);
-			boolean compRemoved = false;
+
+			// If the endpoints are in the same component, skip this edge and continue.
 			if(srcIndex == destIndex)
-			{
-				//System.out.println("Source and destination are in the same component.");
 				continue;
-			}
 
 			Component srcComp;
 			Component destComp;
@@ -268,6 +280,7 @@ public class Graph implements GraphInterface
 			{
 				srcComp = compSet.remove(srcIndex);
 				//Make sure were removing the correct destination index after removing source index.
+				// (If we remove srcIndex that is before destIndex in the list, it changes the index of destIndex)
 				if(destIndex > srcIndex)
 					destComp = compSet.remove(destIndex - 1);
 				else
@@ -279,13 +292,10 @@ public class Graph implements GraphInterface
 				continue;
 			}
 
-			// If endpoints are in the same component, ignore this edge.
-			if(srcComp.equals(destComp))
-				continue;
-			// If not, merge the destination component into the source component.
+			// Merge the destination component into the source component now that they are connected by the new edge.
 			srcComp.mergeComponent(destComp);
 
-			// Add source back to compSet
+			// Add merged component back to compSet
 			compSet.add(srcComp);
 
 			// Add edge to the mst.
@@ -311,6 +321,12 @@ public class Graph implements GraphInterface
 		return newSubgraph;
 	}
 
+	/**
+	* Gets the index of the component that contains the input vertex. Returns -1 of vertex doesn't exist in set.
+	* @param compSet The set of components that should contain the search vertex.
+	* @param searchVert The vertex to find in the compSet.
+	* @return An integer representing the index of the component in the set that contains the input vertex.
+	*/
 	public static int indexOfComponent(LinkedList<Component> compSet, Vertex searchVert)
 	{
 		int index = 0;

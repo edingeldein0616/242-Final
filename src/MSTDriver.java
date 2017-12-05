@@ -1,7 +1,7 @@
-import java.io.*;
-import java.util.*;
+import java.io.PrintWriter;
+import java.io.File;
 
-public class Driver
+public class MSTDriver
 {
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
@@ -11,38 +11,41 @@ public class Driver
 	public static void main(String[] args) 
 	{
 
+		// Create the graph from data file.
 		Graph graph = Helper.getGraphFromCSV("../data/DATA-FINAL-F17.txt");
-
+		// Sort all of the edges of the created graph.
 		graph.sortEdges();
 		graph.sortThisEdges();
-		System.out.println("\"graph\" edges:");
-		tester(graph);
 
+		// Create an MST from graph using baruvka's algorithm
 		Graph mst = Graph.baruvkaMST(graph);
-		System.out.println();
-		System.out.println("\"mst\" edges:");
-		tester(mst);
-		System.out.println();
 
-		System.out.println("Number of edges in \"graph\": " + graph.edges.size());
-		System.out.println("Number of verts in \"graph\": " + graph.verts.size());
-		System.out.println("Number of edges in \"mst\": " + mst.edges.size());
-		System.out.println("Number of verts in \"mst\": " + mst.verts.size());
-		//Helper.printGraphVerticies(graph);
-		System.out.println();
-
-		//Helper.searchAllGraphVerticies(graph);
+		printMstInfo(mst);
+		System.out.println("MST has been printed to file : ../data/MinimumSpanningTreeOutput.txt");
 
 	}
 
-	public static void tester(Graph graph)
+	public static void printMstInfo(Graph graph)
 	{
-		int i = 1;
-		while(i < graph.edges.size())
-		{
-			Edge edge = graph.edges.get(i - 1);
-			System.out.println(i + ":" + edge.toString());
-			i++;
+		try {
+			PrintWriter writer = new PrintWriter(new File("../data/MinimumSpanningTreeOutput.txt"));
+			writer.println("************************************************************************");
+			writer.println("*************************Minimum Spanning Tree**************************");
+			writer.println("************************************************************************");
+			writer.println();
+			writer.println("Roads of the Minimum spanning tree: \n");
+			int roadNum = 1;
+			for(Edge e : graph.edges)
+			{
+				writer.println("\t" + roadNum + "-> " + e.toString());
+				roadNum++;
+			}
+			writer.println("\nTotal weight of the minimum spanning tree: " + graph.totalWeight() + "\n");
+			writer.println("Total number of roads in the minimum spanning tree: " + graph.edges.size() + "\n");
+			writer.close();
+
+		} catch (Exception e) {
+			System.out.println("ERROR: " + e.getMessage());
 		}
 	}
 

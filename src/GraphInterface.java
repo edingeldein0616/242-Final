@@ -19,6 +19,7 @@ public interface GraphInterface
 	public int getDegree(String city);
 	public LinkedList<Edge> getEdges(String city);
 	public LinkedList<Vertex> getAdjacent(String city);
+	public int totalWeight();
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Mutators  
