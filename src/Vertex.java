@@ -7,6 +7,8 @@ public class Vertex
 	* * * * * * * * * * * * * * * * * * * * * * * */	
 	public LinkedList<Edge> edges;
 	public String name;
+	//ADDED BY @jakelahti
+	public boolean visited;
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Constructor  
@@ -15,6 +17,8 @@ public class Vertex
 	{
 		this.name = n;
 		this.edges = new LinkedList<Edge>();
+		//ADDED BY @jakelahti
+		this.visited = false;
 	}
 
 
@@ -64,5 +68,28 @@ public class Vertex
 			Edge e = pqueue.poll();
 			this.edges.add(e);
 		}
+	}
+
+	/*****************************************
+	 *          ADDED BY @jakelahti          *
+	 *****************************************/
+	/**
+	* @param invisit boolean that will set whether or not vertex has been visited
+	* @return whether or not the vertex has been visited
+	*/
+	public void setVisited(boolean invisit)
+	{
+		visited = invisit;
+	}
+	public boolean getVisit()
+	{
+		return visited;
+	}
+
+
+
+	public String toString()
+	{
+		return "Name: " + name +"\n Edges --- " + edges + "\n Visited? -" + visited + "";
 	}
 }

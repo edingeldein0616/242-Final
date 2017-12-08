@@ -8,6 +8,8 @@ public class Edge
 	public Vertex endpoint1;
 	public Vertex endpoint2;
 	public int weight;
+	public edgeType type = null;
+	public boolean visited;
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Constructor  
@@ -26,4 +28,34 @@ public class Edge
 	{
 		return "(" + this.endpoint1.name + " - " + this.endpoint2.name + ") : " + this.weight;
 	}
+
+	/***********************************************
+	 *        ADDED BY @jakelahti                  *
+	 ***********************************************/
+	public void setType(edgeType intype)
+	{
+		type = intype;
+	}
+
+	public edgeType getType()
+	{
+		return type;
+	}
+
+	/*****************************************
+	 *          ADDED BY @jakelahti          *
+	 *****************************************/
+	/**
+	* @param invisit boolean that will set whether or not edge has been visited
+	* @return whether or not the edge has been visited
+	*/
+	public void setVisited(boolean invisit)
+	{
+		visited = invisit;
+	}
+	public boolean getVisit()
+	{
+		return visited;
+	}
+
 }
