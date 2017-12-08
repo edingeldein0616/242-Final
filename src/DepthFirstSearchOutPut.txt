@@ -1,0 +1,413 @@
+
+---------VERTICIES IN ORDER OF DFS TRAVERSAL------------
+Grand Forks
+Fargo
+Bismarck
+Minot
+Malta
+Billings
+Buffalo, WY
+Rapid City
+Pierre
+North Platte
+Oakley
+Liberal
+Amarillo
+Big Spring
+Dallas
+Oklahoma City
+Wichita
+Topeka
+Kansas City
+Springfield
+Little Rock
+Memphis
+Nashville
+Knoxville
+Atlanta
+Birmingham
+Montgomery
+Mobile
+New Orleans
+Jackson
+Houston
+San Antonio
+Eagle Pass
+Laredo
+Brownsville
+El Paso
+Albuquerque
+Springerville
+Phoenix
+Tucson
+Flagstaff
+Cortez
+Salt Lake City
+Twin Falls
+Boise
+Riley
+Eugene
+Portland, OR
+Seattle
+Spokane
+Missoula
+Helena
+Old Faithful
+Rawlins
+Cheyenne
+Denver
+Lamar
+St. George
+Las Vegas
+Barstow
+Los Angeles
+San Diego
+Yosemite Village
+San Francisco
+Reno
+Winnemucca
+Ely
+Crescent City
+Tallahassee
+Lake City
+Jacksonville
+Daytona Beach
+Orlando
+Tampa
+Miami
+Key West
+Savannah
+Charleston, SC
+Myrtle Beach
+Wilmington
+Raleigh
+Richmond
+Norfolk
+Washington, D.C.
+Baltimore
+Philadelphia
+New York City
+Hartford
+Boston
+Portland, ME
+Bangor
+Albany
+Binghamton
+Buffalo, NY
+Cleveland
+Pittsburgh
+Columbus
+Cincinnati
+Louisville
+Indianapolis
+Chicago
+Milwaukee
+Madison
+Minneapolis
+Duluth
+Sioux Falls
+Omaha
+Des Moines
+St. Louis
+Grand Rapids
+Detroit
+Charleston, W.VA
+Charlotte
+Harrisburg
+Name: Grand Forks
+ Edges --- [(Grand Forks - Fargo) : 76, (Grand Forks - Minot) : 210, (Grand Forks - Duluth) : 268]
+ Visited? -true
+-------------DISCOVERY EDGES-------------
+1 -> (Grand Forks - Fargo) : 76
+2 -> (Bismarck - Fargo) : 194
+3 -> (Bismarck - Minot) : 106
+4 -> (Malta - Minot) : 457
+5 -> (Billings - Malta) : 206
+6 -> (Buffalo, WY - Billings) : 168
+7 -> (Rapid City - Buffalo, WY) : 216
+8 -> (Rapid City - Pierre) : 174
+9 -> (North Platte - Pierre) : 264
+10 -> (North Platte - Oakley) : 158
+11 -> (Liberal - Oakley) : 143
+12 -> (Amarillo - Liberal) : 164
+13 -> (Amarillo - Big Spring) : 224
+14 -> (Dallas - Big Spring) : 266
+15 -> (Dallas - Oklahoma City) : 208
+16 -> (Oklahoma City - Wichita) : 156
+17 -> (Topeka - Wichita) : 138
+18 -> (Kansas City - Topeka) : 65
+19 -> (Kansas City - Springfield) : 170
+20 -> (Little Rock - Springfield) : 219
+21 -> (Memphis - Little Rock) : 138
+22 -> (Memphis - Nashville) : 208
+23 -> (Knoxville - Nashville) : 177
+24 -> (Atlanta - Knoxville) : 230
+25 -> (Atlanta - Birmingham) : 149
+26 -> (Montgomery - Birmingham) : 92
+27 -> (Montgomery - Mobile) : 171
+28 -> (New Orleans - Mobile) : 153
+29 -> (New Orleans - Jackson) : 183
+30 -> (New Orleans - Houston) : 363
+31 -> (San Antonio - Houston) : 201
+32 -> (San Antonio - Eagle Pass) : 142
+33 -> (Eagle Pass - Laredo) : 124
+34 -> (Brownsville - Laredo) : 204
+35 -> (El Paso - Eagle Pass) : 484
+36 -> (El Paso - Albuquerque) : 270
+37 -> (Albuquerque - Springerville) : 233
+38 -> (Phoenix - Springerville) : 236
+39 -> (Phoenix - Tucson) : 112
+40 -> (Phoenix - Flagstaff) : 141
+41 -> (Flagstaff - Cortez) : 263
+42 -> (Salt Lake City - Cortez) : 348
+43 -> (Salt Lake City - Twin Falls) : 222
+44 -> (Boise - Twin Falls) : 123
+45 -> (Boise - Riley) : 210
+46 -> (Riley - Eugene) : 230
+47 -> (Portland, OR - Eugene) : 115
+48 -> (Portland, OR - Seattle) : 180
+49 -> (Spokane - Seattle) : 276
+50 -> (Spokane - Missoula) : 198
+51 -> (Helena - Missoula) : 116
+52 -> (Helena - Old Faithful) : 216
+53 -> (Old Faithful - Rawlins) : 320
+54 -> (Rawlins - Cheyenne) : 146
+55 -> (Denver - Cheyenne) : 102
+56 -> (Denver - Lamar) : 206
+57 -> (Denver - St. George) : 648
+58 -> (Las Vegas - St. George) : 122
+59 -> (Las Vegas - Barstow) : 155
+60 -> (Los Angeles - Barstow) : 138
+61 -> (Los Angeles - San Diego) : 118
+62 -> (Los Angeles - Yosemite Village) : 313
+63 -> (San Francisco - Yosemite Village) : 193
+64 -> (San Francisco - Reno) : 228
+65 -> (Reno - Winnemucca) : 164
+66 -> (Reno - Ely) : 331
+67 -> (San Francisco - Crescent City) : 371
+68 -> (Tallahassee - Mobile) : 253
+69 -> (Tallahassee - Lake City) : 111
+70 -> (Jacksonville - Lake City) : 65
+71 -> (Jacksonville - Daytona Beach) : 99
+72 -> (Orlando - Daytona Beach) : 58
+73 -> (Orlando - Tampa) : 84
+74 -> (Miami - Tampa) : 266
+75 -> (Miami - Key West) : 156
+76 -> (Jacksonville - Savannah) : 138
+77 -> (Charleston, SC - Savannah) : 108
+78 -> (Charleston, SC - Myrtle Beach) : 98
+79 -> (Wilmington - Myrtle Beach) : 71
+80 -> (Raleigh - Wilmington) : 127
+81 -> (Raleigh - Richmond) : 156
+82 -> (Norfolk - Richmond) : 99
+83 -> (Washington, D.C. - Norfolk) : 208
+84 -> (Washington, D.C. - Baltimore) : 39
+85 -> (Baltimore - Philadelphia) : 98
+86 -> (New York City - Philadelphia) : 99
+87 -> (New York City - Hartford) : 118
+88 -> (Boston - Hartford) : 101
+89 -> (Boston - Portland, ME) : 103
+90 -> (Portland, ME - Bangor) : 132
+91 -> (Boston - Albany) : 177
+92 -> (Binghamton - Albany) : 137
+93 -> (Buffalo, NY - Binghamton) : 220
+94 -> (Buffalo, NY - Cleveland) : 194
+95 -> (Cleveland - Pittsburgh) : 141
+96 -> (Pittsburgh - Columbus) : 184
+97 -> (Cincinnati - Columbus) : 109
+98 -> (Cincinnati - Louisville) : 102
+99 -> (Indianapolis - Louisville) : 124
+100 -> (Chicago - Indianapolis) : 177
+101 -> (Chicago - Milwaukee) : 91
+102 -> (Milwaukee - Madison) : 78
+103 -> (Minneapolis - Madison) : 260
+104 -> (Minneapolis - Duluth) : 152
+105 -> (Minneapolis - Sioux Falls) : 247
+106 -> (Omaha - Sioux Falls) : 175
+107 -> (Omaha - Des Moines) : 143
+108 -> (St. Louis - Des Moines) : 387
+109 -> (Chicago - Grand Rapids) : 190
+110 -> (Detroit - Grand Rapids) : 157
+111 -> (Charleston, W.VA - Louisville) : 257
+112 -> (Charleston, W.VA - Charlotte) : 314
+113 -> (Pittsburgh - Harrisburg) : 218
+-------------BACK EDGES-------------
+0 -> (Grand Forks - Minot) : 210
+1 -> (Fargo - Minot) : 268
+2 -> (Bismarck - Pierre) : 209
+3 -> (Atlanta - Montgomery) : 161
+4 -> (Memphis - Jackson) : 212
+5 -> (Jackson - Birmingham) : 234
+6 -> (Montgomery - Jackson) : 251
+7 -> (Little Rock - Jackson) : 267
+8 -> (Dallas - Jackson) : 417
+9 -> (New Orleans - Birmingham) : 354
+10 -> (San Antonio - Laredo) : 154
+11 -> (San Antonio - Brownsville) : 281
+12 -> (Brownsville - Houston) : 365
+13 -> (El Paso - Tucson) : 324
+14 -> (Albuquerque - Cortez) : 273
+15 -> (Buffalo, WY - Old Faithful) : 296
+16 -> (Liberal - Lamar) : 168
+17 -> (Amarillo - Lamar) : 228
+18 -> (Albuquerque - Lamar) : 393
+19 -> (Denver - Oakley) : 247
+20 -> (Denver - North Platte) : 290
+21 -> (Denver - Cortez) : 411
+22 -> (Denver - Albuquerque) : 457
+23 -> (Denver - Salt Lake City) : 529
+24 -> (San Diego - Barstow) : 181
+25 -> (Phoenix - San Diego) : 368
+26 -> (Boise - Winnemucca) : 257
+27 -> (Salt Lake City - Winnemucca) : 362
+28 -> (Reno - Yosemite Village) : 213
+29 -> (Twin Falls - Ely) : 255
+30 -> (Las Vegas - Ely) : 282
+31 -> (Salt Lake City - Ely) : 294
+32 -> (Reno - Riley) : 342
+33 -> (Las Vegas - Reno) : 442
+34 -> (Los Angeles - Reno) : 522
+35 -> (Portland, OR - Crescent City) : 346
+36 -> (San Francisco - Los Angeles) : 384
+37 -> (San Francisco - Barstow) : 442
+38 -> (San Francisco - Eugene) : 540
+39 -> (Los Angeles - Phoenix) : 393
+40 -> (Flagstaff - Barstow) : 348
+41 -> (Las Vegas - Phoenix) : 288
+42 -> (Las Vegas - Salt Lake City) : 423
+43 -> (Flagstaff - St. George) : 286
+44 -> (Salt Lake City - St. George) : 305
+45 -> (North Platte - Cheyenne) : 215
+46 -> (Rapid City - Cheyenne) : 290
+47 -> (Buffalo, WY - Rawlins) : 236
+48 -> (Salt Lake City - Rawlins) : 294
+49 -> (Salt Lake City - Old Faithful) : 482
+50 -> (Billings - Helena) : 243
+51 -> (Helena - Malta) : 293
+52 -> (Salt Lake City - Helena) : 482
+53 -> (Twin Falls - Missoula) : 401
+54 -> (Boise - Spokane) : 379
+55 -> (Portland, OR - Spokane) : 400
+56 -> (Boise - Seattle) : 499
+57 -> (Portland, OR - Riley) : 268
+58 -> (Portland, OR - Boise) : 439
+59 -> (Albuquerque - Flagstaff) : 325
+60 -> (Phoenix - El Paso) : 404
+61 -> (Albuquerque - Amarillo) : 296
+62 -> (Albuquerque - Big Spring) : 418
+63 -> (Albuquerque - Liberal) : 421
+64 -> (El Paso - Big Spring) : 344
+65 -> (El Paso - Amarillo) : 412
+66 -> (San Antonio - El Paso) : 552
+67 -> (El Paso - Houston) : 746
+68 -> (San Antonio - Dallas) : 273
+69 -> (San Antonio - Big Spring) : 298
+70 -> (Dallas - Houston) : 237
+71 -> (Little Rock - Houston) : 315
+72 -> (Dallas - New Orleans) : 509
+73 -> (Lake City - Tampa) : 169
+74 -> (Jacksonville - Tampa) : 190
+75 -> (Tallahassee - Tampa) : 252
+76 -> (Orlando - Miami) : 236
+77 -> (Miami - Daytona Beach) : 270
+78 -> (Orlando - Lake City) : 160
+79 -> (Raleigh - Norfolk) : 170
+80 -> (New York City - Binghamton) : 199
+81 -> (Cincinnati - Indianapolis) : 108
+82 -> (Chicago - Madison) : 152
+83 -> (Fargo - Duluth) : 259
+84 -> (Grand Forks - Duluth) : 268
+85 -> (Duluth - Madison) : 340
+86 -> (Minneapolis - Fargo) : 242
+87 -> (Kansas City - Des Moines) : 197
+88 -> (Minneapolis - Des Moines) : 286
+89 -> (Chicago - Des Moines) : 362
+90 -> (Des Moines - Madison) : 373
+91 -> (St. Louis - Springfield) : 224
+92 -> (Indianapolis - St. Louis) : 244
+93 -> (St. Louis - Kansas City) : 250
+94 -> (St. Louis - Louisville) : 259
+95 -> (Memphis - St. Louis) : 283
+96 -> (Chicago - St. Louis) : 302
+97 -> (Nashville - St. Louis) : 312
+98 -> (Little Rock - St. Louis) : 350
+99 -> (Cincinnati - St. Louis) : 353
+100 -> (Minneapolis - St. Louis) : 540
+101 -> (Cleveland - Des Moines) : 677
+102 -> (Omaha - Topeka) : 163
+103 -> (Omaha - Kansas City) : 194
+104 -> (Omaha - North Platte) : 298
+105 -> (Minneapolis - Omaha) : 409
+106 -> (Omaha - Liberal) : 489
+107 -> (Omaha - Rapid City) : 539
+108 -> (Fargo - Sioux Falls) : 253
+109 -> (Rapid City - Sioux Falls) : 350
+110 -> (Minneapolis - Pierre) : 399
+111 -> (Detroit - Cleveland) : 173
+112 -> (Detroit - Columbus) : 206
+113 -> (Detroit - Cincinnati) : 260
+114 -> (Detroit - Indianapolis) : 283
+115 -> (Chicago - Detroit) : 300
+116 -> (Detroit - Buffalo, NY) : 417
+117 -> (Chicago - Cleveland) : 345
+118 -> (Chicago - Nashville) : 473
+119 -> (Chicago - Kansas City) : 557
+120 -> (Indianapolis - Columbus) : 179
+121 -> (Nashville - Louisville) : 180
+122 -> (Cincinnati - Charleston, W.VA) : 202
+123 -> (Charleston, W.VA - Pittsburgh) : 221
+124 -> (Charleston, W.VA - Cleveland) : 260
+125 -> (Charlotte - Raleigh) : 175
+126 -> (Charlotte - Myrtle Beach) : 180
+127 -> (Charlotte - Wilmington) : 188
+128 -> (Charleston, SC - Charlotte) : 218
+129 -> (Knoxville - Charlotte) : 231
+130 -> (Atlanta - Charlotte) : 249
+131 -> (Washington, D.C. - Charlotte) : 388
+132 -> (Jacksonville - Charlotte) : 399
+133 -> (Charleston, W.VA - Richmond) : 331
+134 -> (Washington, D.C. - Charleston, W.VA) : 380
+135 -> (Knoxville - Cincinnati) : 254
+136 -> (Washington, D.C. - Cincinnati) : 523
+137 -> (Cleveland - Columbus) : 146
+138 -> (Harrisburg - Philadelphia) : 105
+139 -> (New York City - Harrisburg) : 174
+140 -> (Washington, D.C. - Pittsburgh) : 251
+141 -> (New York City - Cleveland) : 481
+142 -> (Buffalo, NY - Albany) : 289
+143 -> (New York City - Albany) : 160
+144 -> (Washington, D.C. - New York City) : 245
+145 -> (Washington, D.C. - Philadelphia) : 235
+146 -> (Washington, D.C. - Richmond) : 108
+147 -> (Washington, D.C. - Knoxville) : 512
+148 -> (Wilmington - Norfolk) : 259
+149 -> (Wilmington - Richmond) : 255
+150 -> (Knoxville - Raleigh) : 362
+151 -> (Jacksonville - Raleigh) : 536
+152 -> (Atlanta - Charleston, SC) : 329
+153 -> (Knoxville - Charleston, SC) : 403
+154 -> (Atlanta - Savannah) : 256
+155 -> (Atlanta - Jacksonville) : 354
+156 -> (Atlanta - Lake City) : 292
+157 -> (Tallahassee - Montgomery) : 208
+158 -> (Tallahassee - Atlanta) : 275
+159 -> (Nashville - Birmingham) : 192
+160 -> (Memphis - Birmingham) : 241
+161 -> (Atlanta - Nashville) : 252
+162 -> (Atlanta - Memphis) : 394
+163 -> (Memphis - Springfield) : 281
+164 -> (Dallas - Little Rock) : 315
+165 -> (Little Rock - Oklahoma City) : 336
+166 -> (Dallas - Springfield) : 282
+167 -> (Oklahoma City - Springfield) : 283
+168 -> (Kansas City - Wichita) : 183
+169 -> (Topeka - Oakley) : 289
+170 -> (Topeka - Liberal) : 361
+171 -> (Liberal - Wichita) : 209
+172 -> (Oklahoma City - Liberal) : 256
+173 -> (Amarillo - Oklahoma City) : 259
+174 -> (Dallas - Amarillo) : 367
+175 -> (Bismarck - Rapid City) : 358
+176 -> (Bismarck - Billings) : 418
+177 -> (Bismarck - Malta) : 430
+Total Weight for traversal of graph: 20856
