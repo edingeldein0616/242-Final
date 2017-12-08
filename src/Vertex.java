@@ -7,6 +7,7 @@ public class Vertex
 	* * * * * * * * * * * * * * * * * * * * * * * */	
 	public LinkedList<Edge> edges;
 	public String name;
+	public int pathDistance;
 	//ADDED BY @jakelahti
 	public boolean visited;
 
@@ -17,6 +18,7 @@ public class Vertex
 	{
 		this.name = n;
 		this.edges = new LinkedList<Edge>();
+		this.pathDistance = Integer.MAX_VALUE;
 		//ADDED BY @jakelahti
 		this.visited = false;
 	}
@@ -34,6 +36,54 @@ public class Vertex
 		return edges.size();
 	}
 
+	/**
+	* Gets the shortest path distance of the vertex instance. Used when creating Shortest Path Tree.
+	* @return An integer representing the shortest path distance of the current vertex.
+	*/
+	public int getPathDistance()
+	{
+		return this.pathDistance;
+	}
+
+	/**
+	* Gets an edge to the input vertex from current vertex instance.
+	* @param destVert The destination endpoint of the edge to find.
+	* @return Edge that contains the current vertex instance and the input vertex as endpoints. Returns null if edge doesn't exist.
+	*/
+	public Edge getEdgeTo(Vertex destVert)
+	{
+		for(Edge e : this.edges)
+		{
+			Vertex e1 = e.endpoint1;
+			Vertex e2 = e.endpoint2;
+
+			if(e1.equals(destVert) || e2.equals(destVert))
+				return e;
+		}
+		return null;
+	}
+
+	/**
+	* Returns an linked list of all adjacent verticies to vertex instance.
+	* @return A linked list of adjacent verticies.
+	*/
+	public LinkedList<Vertex> getAdjacentVerts()
+	{
+		LinkedList<Vertex> verts = new LinkedList<Vertex>();
+		for(Edge e : this.edges)
+		{
+			Vertex e1 = e.endpoint1;
+			Vertex e2 = e.endpoint2;
+			if(!e1.name.equals(this.name))
+				verts.add(e1);
+			else if(!e2.name.equals(this.name))
+				verts.add(e2);
+		}
+		return verts;
+
+	}
+
+
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Mutators  
 	* * * * * * * * * * * * * * * * * * * * * * * */	
@@ -47,6 +97,15 @@ public class Vertex
 		Edge newEdge = new Edge(this, vert, weight);
 		this.edges.add(newEdge);
 	}
+
+	/**
+	* Sets the shortest path distance of the vertex instance. Used when creating shortest path tree.
+	* @param newPathDistance The updated path distance.
+	*/
+	public void setPathDistance(int newPathDistance)
+	{
+		this.pathDistance = newPathDistance;
+	}	
 
 	/**
 	* Sorts the edge list from lowest to highest weight.

@@ -1,0 +1,124 @@
+Grand Forks - Seattle
+	Cities:
+		1 -> Grand Forks
+		2 -> Minot
+		3 -> Malta
+		4 -> Helena
+		5 -> Missoula
+		6 -> Spokane
+		7 -> Seattle
+
+	Roads:
+		1 -> (Grand Forks - Minot) : 210
+		2 -> (Malta - Minot) : 457
+		3 -> (Helena - Malta) : 293
+		4 -> (Helena - Missoula) : 116
+		5 -> (Spokane - Missoula) : 198
+		6 -> (Spokane - Seattle) : 276
+
+Distance of route: 1550
+
+Seattle - Los Angeles
+	Cities:
+		1 -> Seattle
+		2 -> Portland, OR
+		3 -> Riley
+		4 -> Reno
+		5 -> Los Angeles
+
+	Roads:
+		1 -> (Portland, OR - Seattle) : 180
+		2 -> (Portland, OR - Riley) : 268
+		3 -> (Reno - Riley) : 342
+		4 -> (Los Angeles - Reno) : 522
+
+Distance of route: 1312
+
+Los Angeles - Dallas
+	Cities:
+		1 -> Los Angeles
+		2 -> Phoenix
+		3 -> El Paso
+		4 -> Amarillo
+		5 -> Dallas
+
+	Roads:
+		1 -> (Los Angeles - Phoenix) : 393
+		2 -> (Phoenix - El Paso) : 404
+		3 -> (El Paso - Amarillo) : 412
+		4 -> (Dallas - Amarillo) : 367
+
+Distance of route: 1576
+
+Dallas - Miami
+	Cities:
+		1 -> Dallas
+		2 -> New Orleans
+		3 -> Mobile
+		4 -> Tallahassee
+		5 -> Tampa
+		6 -> Miami
+
+	Roads:
+		1 -> (Dallas - New Orleans) : 509
+		2 -> (New Orleans - Mobile) : 153
+		3 -> (Tallahassee - Mobile) : 253
+		4 -> (Tallahassee - Tampa) : 252
+		5 -> (Miami - Tampa) : 266
+
+Distance of route: 1433
+
+Miami - Boston
+	Cities:
+		1 -> Miami
+		2 -> Tampa
+		3 -> Jacksonville
+		4 -> Charlotte
+		5 -> Washington, D.C.
+		6 -> New York City
+		7 -> Hartford
+		8 -> Boston
+
+	Roads:
+		1 -> (Miami - Tampa) : 266
+		2 -> (Jacksonville - Tampa) : 190
+		3 -> (Jacksonville - Charlotte) : 399
+		4 -> (Washington, D.C. - Charlotte) : 388
+		5 -> (Washington, D.C. - New York City) : 245
+		6 -> (New York City - Hartford) : 118
+		7 -> (Boston - Hartford) : 101
+
+Distance of route: 1707
+
+Boston - Chicago
+	Cities:
+		1 -> Boston
+		2 -> Hartford
+		3 -> New York City
+		4 -> Cleveland
+		5 -> Chicago
+
+	Roads:
+		1 -> (Boston - Hartford) : 101
+		2 -> (New York City - Hartford) : 118
+		3 -> (New York City - Cleveland) : 481
+		4 -> (Chicago - Cleveland) : 345
+
+Distance of route: 1045
+
+Chicago - Grand Forks
+	Cities:
+		1 -> Chicago
+		2 -> Madison
+		3 -> Duluth
+		4 -> Grand Forks
+
+	Roads:
+		1 -> (Chicago - Madison) : 152
+		2 -> (Duluth - Madison) : 340
+		3 -> (Grand Forks - Duluth) : 268
+
+Distance of route: 760
+
+
+Length of the total circular path from Grand Forks to Grand Forks: 9383
