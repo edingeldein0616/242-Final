@@ -239,6 +239,25 @@ public class Graph implements GraphInterface
 		}
 	}
 
+	/**
+	* Sorts the verts list of the current graph instance. Will only work if this graph is a shortest path tree.
+	* @output The verts list of this graph will be sorted in ascending order of pathDistance.
+	*/
+	public void sortThisVerts()
+	{
+		int sptvertsSize = this.verts.size();
+		PriorityQueue<Vertex> queue = new PriorityQueue<Vertex>(sptvertsSize, new SPDistanceComparator());
+		for(int i = 0; i < sptvertsSize; i++)
+		{
+			queue.add(this.verts.poll());
+		}
+
+		while(queue.size() > 0)
+		{
+			this.verts.add(queue.poll());
+		}
+	}
+
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Public static functions  
 	* * * * * * * * * * * * * * * * * * * * * * * */
@@ -315,7 +334,59 @@ public class Graph implements GraphInterface
 	*/
 	public static Graph dijkstraSPT(Graph graph, Vertex startingVertex)
 	{
-		
+
+		//Set the distance of the starting vertex to 0
+		graph.getVertex(startingVertex.name, false).setPathDistance(0);
+		Graph sptGraph = createSubgraph(graph);
+
+		// Create priority queue to stor verticies of graph.
+		SPDistanceComparator comp = new SPDistanceComparator();
+		PriorityQueue<Vertex> queue = new PriorityQueue<Vertex>(graph.verts.size(), comp);
+		LinkedList<Vertex> cloud = new LinkedList<Vertex>();
+		for(Vertex vert : graph.verts)
+		{
+			queue.add(vert);
+		}
+
+		while(queue.size() > 0)
+		{
+			// Remove vert with shortest path from start.
+			Vertex u = queue.poll();
+			
+			//Add u to the cloud.
+			cloud.add(u);
+
+			LinkedList<Vertex> uAdjacentVerts = u.getAdjacentVerts();
+			Edge edgeBetween = null;
+			// For each adjacent vertex to u that isn't in the cloud
+			// This is performing edge relaxation (i.e. updating the shortest path distance of each adjacent edge of u)
+			for(Vertex z : uAdjacentVerts)
+			{	
+				// Get z from pqueue so it can be updated and re-added
+				queue.remove(z);
+
+				// Check if z isn't already in the cloud.
+				if(cloud.contains(z))
+					continue;
+				
+				// Get the edge between u ad z
+				edgeBetween = u.getEdgeTo(z);
+				if(edgeBetween == null) {
+					System.out.println("Edge between is null....");
+					continue;
+				}
+
+				if(u.getPathDistance() + edgeBetween.weight < z.getPathDistance())
+					z.setPathDistance(u.getPathDistance() + edgeBetween.weight);
+
+				queue.add(z);
+			}
+
+			if(edgeBetween != null)
+				sptGraph.edges.add(edgeBetween);
+		}
+
+		return sptGraph;
 	}
 
 	/**
@@ -355,5 +426,74 @@ public class Graph implements GraphInterface
 			index++;
 		}
 		return -1;
+	}
+
+	/**
+	* Finds the shortest path between two verticies given a graph and the names of the verticies. Input graph MUST be a shortest path tree.
+	* @param src The starting vertex of the path.
+	* @param dest The destination vertex of the path.
+	* @param sptGraph The graph within which the shortest path exists.
+	* @return A path object of edges and verticies on the path.
+	*/
+	public static Path findShortestPath(String src, String dest, Graph graph)
+	{
+		for(Vertex vert : graph.verts)
+		{
+			vert.setPathDistance(Integer.MAX_VALUE);
+		}
+		Graph sptGraph = Graph.dijkstraSPT(graph, graph.getVertex(src, false));
+
+		Path cityRoadPath = getPathLists(src, dest, sptGraph);
+
+		return cityRoadPath;
+
+	}
+
+	/**
+	* Retrieves all cities and edges for the shortest path and returns two linked lists with the verticies and edges of the paths.
+	* @param src The starting vertex of the path.
+	* @param dest The destination vertex of the path.
+	* @param sptGraph The graph within which the shortest path exists.
+	* @return A path object of edges and verticies on the path.
+	*/
+	public static Path getPathLists(String src, String dest, Graph sptGraph)
+	{
+		Vertex destVert = sptGraph.getVertex(dest, false);
+		LinkedList<Vertex> pathCities = new LinkedList<Vertex>();
+		LinkedList<Edge> pathRoads = new LinkedList<Edge>();
+		Vertex currentCity = destVert;
+		Vertex nextCity;
+
+		pathCities.addFirst(destVert);
+		do {
+			nextCity = getMinPathDist(currentCity);
+			Edge roadToNextCity = currentCity.getEdgeTo(nextCity);
+			pathCities.addFirst(nextCity);
+			pathRoads.addFirst(roadToNextCity);
+			currentCity = nextCity;
+		}
+		while(!nextCity.name.equals(src));
+
+		Path path = new Path(src, dest);
+		path.verts = pathCities;
+		path.edges = pathRoads;
+		return path;
+	}
+
+	public static Vertex getMinPathDist(Vertex curr)
+	{
+		LinkedList<Vertex> adjacentVerts = curr.getAdjacentVerts();
+		int mindex = -1;
+		int mindist = Integer.MAX_VALUE;
+		for(int i = 0; i < adjacentVerts.size(); i++)
+		{
+			int currdist = adjacentVerts.get(i).getPathDistance();
+			if(currdist < mindist)
+			{
+				mindist = currdist;
+				mindex = i;
+			}
+		}
+		return adjacentVerts.get(mindex);
 	}
 }
