@@ -32,6 +32,7 @@ public interface GraphInterface
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Public static functions  
 	* * * * * * * * * * * * * * * * * * * * * * * */
-	//public static Graph baruvkaMST(Graph graph);
+	public static Graph baruvkaMST(Graph graph);
+	public static Graph dijkstraSPT(Graph graph, Vertex startingVertex);
 
 }

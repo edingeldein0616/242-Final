@@ -307,6 +307,18 @@ public class Graph implements GraphInterface
 	}
 
 	/**
+	* Creates a new graph that contains all of the verticies of the input graph and adds a minimum path weight to each vertex.
+	* @param graph The graph from which to create a SPT.
+	* @param startingVertex The starting vertex of the SPT.
+	* @return A graph that contains all of the verticies of the input graph each with its shortest distance from the starting
+	* vertex and the edges included in the SPT.
+	*/
+	public static Graph dijkstraSPT(Graph graph, Vertex startingVertex)
+	{
+		
+	}
+
+	/**
 	* Duplicates the graph g and creates a new graph that contains only the verticies from g.
 	* @param g The graph to be duplicated.
 	* @return The duplicated subgraph that contains all the same verticies as g.
