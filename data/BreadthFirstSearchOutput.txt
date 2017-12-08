@@ -1,0 +1,415 @@
+
+----------------------BFS TRAVERSAL----------------------
+Grand Forks
+Fargo
+Minot
+Duluth
+Bismarck
+Minneapolis
+Sioux Falls
+Malta
+Madison
+Pierre
+Rapid City
+Billings
+Des Moines
+Omaha
+St. Louis
+Helena
+Milwaukee
+Chicago
+North Platte
+Buffalo, WY
+Cheyenne
+Kansas City
+Cleveland
+Topeka
+Liberal
+Springfield
+Indianapolis
+Louisville
+Memphis
+Nashville
+Little Rock
+Cincinnati
+Missoula
+Old Faithful
+Salt Lake City
+Grand Rapids
+Detroit
+Oakley
+Denver
+Rawlins
+Wichita
+Pittsburgh
+Columbus
+Buffalo, NY
+Charleston, W.VA
+New York City
+Amarillo
+Lamar
+Oklahoma City
+Albuquerque
+Dallas
+Jackson
+Birmingham
+Atlanta
+Knoxville
+Houston
+Washington, D.C.
+Spokane
+Twin Falls
+Ely
+St. George
+Cortez
+Winnemucca
+Las Vegas
+Harrisburg
+Binghamton
+Albany
+Charlotte
+Richmond
+Philadelphia
+Hartford
+Big Spring
+El Paso
+Springerville
+Flagstaff
+San Antonio
+New Orleans
+Montgomery
+Savannah
+Tallahassee
+Lake City
+Charleston, SC
+Jacksonville
+Raleigh
+Brownsville
+Baltimore
+Norfolk
+Seattle
+Boise
+Portland, OR
+Reno
+Barstow
+Phoenix
+Boston
+Myrtle Beach
+Wilmington
+Tucson
+Eagle Pass
+Laredo
+Mobile
+Tampa
+Orlando
+Daytona Beach
+Riley
+Eugene
+Crescent City
+Yosemite Village
+San Francisco
+Los Angeles
+San Diego
+Portland, ME
+Miami
+Bangor
+Key West
+
+Total weight of BFS Traversal :30749
+
+
+----------------------------------- List of discoveryEdges
+(Grand Forks - Fargo) : 76
+(Grand Forks - Minot) : 210
+(Grand Forks - Duluth) : 268
+(Bismarck - Fargo) : 194
+(Minneapolis - Fargo) : 242
+(Fargo - Sioux Falls) : 253
+(Malta - Minot) : 457
+(Duluth - Madison) : 340
+(Bismarck - Pierre) : 209
+(Bismarck - Rapid City) : 358
+(Bismarck - Billings) : 418
+(Minneapolis - Des Moines) : 286
+(Minneapolis - Omaha) : 409
+(Minneapolis - St. Louis) : 540
+(Helena - Malta) : 293
+(Milwaukee - Madison) : 78
+(Chicago - Madison) : 152
+(North Platte - Pierre) : 264
+(Rapid City - Buffalo, WY) : 216
+(Rapid City - Cheyenne) : 290
+(Kansas City - Des Moines) : 197
+(Cleveland - Des Moines) : 677
+(Omaha - Topeka) : 163
+(Omaha - Liberal) : 489
+(St. Louis - Springfield) : 224
+(Indianapolis - St. Louis) : 244
+(St. Louis - Louisville) : 259
+(Memphis - St. Louis) : 283
+(Nashville - St. Louis) : 312
+(Little Rock - St. Louis) : 350
+(Cincinnati - St. Louis) : 353
+(Helena - Missoula) : 116
+(Helena - Old Faithful) : 216
+(Salt Lake City - Helena) : 482
+(Chicago - Grand Rapids) : 190
+(Chicago - Detroit) : 300
+(North Platte - Oakley) : 158
+(Denver - North Platte) : 290
+(Buffalo, WY - Rawlins) : 236
+(Kansas City - Wichita) : 183
+(Cleveland - Pittsburgh) : 141
+(Cleveland - Columbus) : 146
+(Buffalo, NY - Cleveland) : 194
+(Charleston, W.VA - Cleveland) : 260
+(New York City - Cleveland) : 481
+(Amarillo - Liberal) : 164
+(Liberal - Lamar) : 168
+(Oklahoma City - Liberal) : 256
+(Albuquerque - Liberal) : 421
+(Dallas - Springfield) : 282
+(Memphis - Jackson) : 212
+(Memphis - Birmingham) : 241
+(Atlanta - Memphis) : 394
+(Knoxville - Nashville) : 177
+(Little Rock - Houston) : 315
+(Washington, D.C. - Cincinnati) : 523
+(Spokane - Missoula) : 198
+(Twin Falls - Missoula) : 401
+(Salt Lake City - Ely) : 294
+(Salt Lake City - St. George) : 305
+(Salt Lake City - Cortez) : 348
+(Salt Lake City - Winnemucca) : 362
+(Las Vegas - Salt Lake City) : 423
+(Pittsburgh - Harrisburg) : 218
+(Buffalo, NY - Binghamton) : 220
+(Buffalo, NY - Albany) : 289
+(Charleston, W.VA - Charlotte) : 314
+(Charleston, W.VA - Richmond) : 331
+(New York City - Philadelphia) : 99
+(New York City - Hartford) : 118
+(Amarillo - Big Spring) : 224
+(El Paso - Amarillo) : 412
+(Albuquerque - Springerville) : 233
+(Albuquerque - Flagstaff) : 325
+(San Antonio - Dallas) : 273
+(Dallas - New Orleans) : 509
+(Montgomery - Jackson) : 251
+(Atlanta - Savannah) : 256
+(Tallahassee - Atlanta) : 275
+(Atlanta - Lake City) : 292
+(Atlanta - Charleston, SC) : 329
+(Atlanta - Jacksonville) : 354
+(Knoxville - Raleigh) : 362
+(Brownsville - Houston) : 365
+(Washington, D.C. - Baltimore) : 39
+(Washington, D.C. - Norfolk) : 208
+(Spokane - Seattle) : 276
+(Boise - Spokane) : 379
+(Portland, OR - Spokane) : 400
+(Reno - Ely) : 331
+(Las Vegas - Barstow) : 155
+(Las Vegas - Phoenix) : 288
+(Boston - Albany) : 177
+(Charlotte - Myrtle Beach) : 180
+(Charlotte - Wilmington) : 188
+(El Paso - Tucson) : 324
+(El Paso - Eagle Pass) : 484
+(San Antonio - Laredo) : 154
+(New Orleans - Mobile) : 153
+(Tallahassee - Tampa) : 252
+(Orlando - Lake City) : 160
+(Jacksonville - Daytona Beach) : 99
+(Boise - Riley) : 210
+(Portland, OR - Eugene) : 115
+(Portland, OR - Crescent City) : 346
+(Reno - Yosemite Village) : 213
+(San Francisco - Reno) : 228
+(Los Angeles - Reno) : 522
+(San Diego - Barstow) : 181
+(Boston - Portland, ME) : 103
+(Miami - Tampa) : 266
+(Portland, ME - Bangor) : 132
+(Miami - Key West) : 156
+
+
+----------------------------------- List of crossEdges
+(Fargo - Duluth) : 259
+(Fargo - Minot) : 268
+(Bismarck - Minot) : 106
+(Minneapolis - Duluth) : 152
+(Bismarck - Malta) : 430
+(Minneapolis - Sioux Falls) : 247
+(Minneapolis - Madison) : 260
+(Minneapolis - Pierre) : 399
+(Omaha - Sioux Falls) : 175
+(Rapid City - Sioux Falls) : 350
+(Billings - Malta) : 206
+(Des Moines - Madison) : 373
+(Rapid City - Pierre) : 174
+(Omaha - Rapid City) : 539
+(Buffalo, WY - Billings) : 168
+(Billings - Helena) : 243
+(Omaha - Des Moines) : 143
+(Chicago - Des Moines) : 362
+(St. Louis - Des Moines) : 387
+(Omaha - Kansas City) : 194
+(Omaha - North Platte) : 298
+(St. Louis - Kansas City) : 250
+(Chicago - St. Louis) : 302
+(Chicago - Milwaukee) : 91
+(Chicago - Indianapolis) : 177
+(Chicago - Cleveland) : 345
+(Chicago - Nashville) : 473
+(Chicago - Kansas City) : 557
+(North Platte - Cheyenne) : 215
+(Buffalo, WY - Old Faithful) : 296
+(Denver - Cheyenne) : 102
+(Rawlins - Cheyenne) : 146
+(Kansas City - Topeka) : 65
+(Kansas City - Springfield) : 170
+(Detroit - Cleveland) : 173
+(Topeka - Wichita) : 138
+(Topeka - Oakley) : 289
+(Topeka - Liberal) : 361
+(Liberal - Oakley) : 143
+(Liberal - Wichita) : 209
+(Little Rock - Springfield) : 219
+(Memphis - Springfield) : 281
+(Oklahoma City - Springfield) : 283
+(Cincinnati - Indianapolis) : 108
+(Indianapolis - Louisville) : 124
+(Indianapolis - Columbus) : 179
+(Detroit - Indianapolis) : 283
+(Cincinnati - Louisville) : 102
+(Nashville - Louisville) : 180
+(Charleston, W.VA - Louisville) : 257
+(Memphis - Little Rock) : 138
+(Memphis - Nashville) : 208
+(Nashville - Birmingham) : 192
+(Atlanta - Nashville) : 252
+(Little Rock - Jackson) : 267
+(Dallas - Little Rock) : 315
+(Little Rock - Oklahoma City) : 336
+(Cincinnati - Columbus) : 109
+(Cincinnati - Charleston, W.VA) : 202
+(Knoxville - Cincinnati) : 254
+(Detroit - Cincinnati) : 260
+(Old Faithful - Rawlins) : 320
+(Salt Lake City - Old Faithful) : 482
+(Salt Lake City - Twin Falls) : 222
+(Salt Lake City - Rawlins) : 294
+(Denver - Salt Lake City) : 529
+(Detroit - Grand Rapids) : 157
+(Detroit - Columbus) : 206
+(Detroit - Buffalo, NY) : 417
+(Denver - Oakley) : 247
+(Denver - Lamar) : 206
+(Denver - Cortez) : 411
+(Denver - Albuquerque) : 457
+(Denver - St. George) : 648
+(Oklahoma City - Wichita) : 156
+(Pittsburgh - Columbus) : 184
+(Charleston, W.VA - Pittsburgh) : 221
+(Washington, D.C. - Pittsburgh) : 251
+(Washington, D.C. - Charleston, W.VA) : 380
+(New York City - Albany) : 160
+(New York City - Harrisburg) : 174
+(New York City - Binghamton) : 199
+(Washington, D.C. - New York City) : 245
+(Amarillo - Lamar) : 228
+(Amarillo - Oklahoma City) : 259
+(Albuquerque - Amarillo) : 296
+(Dallas - Amarillo) : 367
+(Albuquerque - Lamar) : 393
+(Dallas - Oklahoma City) : 208
+(El Paso - Albuquerque) : 270
+(Albuquerque - Cortez) : 273
+(Albuquerque - Big Spring) : 418
+(Dallas - Houston) : 237
+(Dallas - Big Spring) : 266
+(Dallas - Jackson) : 417
+(New Orleans - Jackson) : 183
+(Jackson - Birmingham) : 234
+(Montgomery - Birmingham) : 92
+(Atlanta - Birmingham) : 149
+(New Orleans - Birmingham) : 354
+(Atlanta - Montgomery) : 161
+(Atlanta - Knoxville) : 230
+(Atlanta - Charlotte) : 249
+(Knoxville - Charlotte) : 231
+(Knoxville - Charleston, SC) : 403
+(Washington, D.C. - Knoxville) : 512
+(San Antonio - Houston) : 201
+(New Orleans - Houston) : 363
+(El Paso - Houston) : 746
+(Washington, D.C. - Richmond) : 108
+(Washington, D.C. - Philadelphia) : 235
+(Washington, D.C. - Charlotte) : 388
+(Boise - Twin Falls) : 123
+(Twin Falls - Ely) : 255
+(Las Vegas - Ely) : 282
+(Las Vegas - St. George) : 122
+(Flagstaff - St. George) : 286
+(Flagstaff - Cortez) : 263
+(Reno - Winnemucca) : 164
+(Boise - Winnemucca) : 257
+(Las Vegas - Reno) : 442
+(Harrisburg - Philadelphia) : 105
+(Binghamton - Albany) : 137
+(Charlotte - Raleigh) : 175
+(Charleston, SC - Charlotte) : 218
+(Jacksonville - Charlotte) : 399
+(Norfolk - Richmond) : 99
+(Raleigh - Richmond) : 156
+(Wilmington - Richmond) : 255
+(Baltimore - Philadelphia) : 98
+(Boston - Hartford) : 101
+(San Antonio - Big Spring) : 298
+(El Paso - Big Spring) : 344
+(Phoenix - El Paso) : 404
+(San Antonio - El Paso) : 552
+(Phoenix - Springerville) : 236
+(Phoenix - Flagstaff) : 141
+(Flagstaff - Barstow) : 348
+(San Antonio - Eagle Pass) : 142
+(San Antonio - Brownsville) : 281
+(Montgomery - Mobile) : 171
+(Tallahassee - Montgomery) : 208
+(Charleston, SC - Savannah) : 108
+(Jacksonville - Savannah) : 138
+(Tallahassee - Lake City) : 111
+(Tallahassee - Mobile) : 253
+(Jacksonville - Lake City) : 65
+(Lake City - Tampa) : 169
+(Charleston, SC - Myrtle Beach) : 98
+(Jacksonville - Tampa) : 190
+(Jacksonville - Raleigh) : 536
+(Raleigh - Wilmington) : 127
+(Raleigh - Norfolk) : 170
+(Brownsville - Laredo) : 204
+(Wilmington - Norfolk) : 259
+(Portland, OR - Seattle) : 180
+(Boise - Seattle) : 499
+(Portland, OR - Boise) : 439
+(Portland, OR - Riley) : 268
+(Reno - Riley) : 342
+(Los Angeles - Barstow) : 138
+(San Francisco - Barstow) : 442
+(Phoenix - Tucson) : 112
+(Phoenix - San Diego) : 368
+(Los Angeles - Phoenix) : 393
+(Wilmington - Myrtle Beach) : 71
+(Eagle Pass - Laredo) : 124
+(Orlando - Tampa) : 84
+(Orlando - Daytona Beach) : 58
+(Orlando - Miami) : 236
+(Miami - Daytona Beach) : 270
+(Riley - Eugene) : 230
+(San Francisco - Eugene) : 540
+(San Francisco - Crescent City) : 371
+(San Francisco - Yosemite Village) : 193
+(Los Angeles - Yosemite Village) : 313
+(San Francisco - Los Angeles) : 384
+(Los Angeles - San Diego) : 118

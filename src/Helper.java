@@ -101,6 +101,6 @@ public class Helper
 		{
 			graph.getVertex(vert.name, true);
 		}
-		graph.getVertex("fuck you", true);
+		
 	}
 }
