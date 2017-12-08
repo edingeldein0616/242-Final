@@ -10,6 +10,7 @@ public class Graph implements GraphInterface
 	* 				Properties
 	* * * * * * * * * * * * * * * * * * * * * * * */
 	public LinkedList<Vertex> verts;
+	public LinkedList<Edge> edges;
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Constructor
@@ -17,6 +18,7 @@ public class Graph implements GraphInterface
 	public Graph()
 	{
 		this.verts = new LinkedList<Vertex>();
+		this.edges = new LinkedList<Edge>();
 	}	
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
@@ -144,6 +146,34 @@ public class Graph implements GraphInterface
 		return adjacencies;
 	}
 
+	/**
+	* Copies the edges array of the current graph instance.
+	* @return A copy of this graphs edges array.
+	*/
+	public LinkedList<Edge> copyEdges()
+	{
+		LinkedList<Edge> newEdges = new LinkedList<Edge>();
+		for(Edge edge : this.edges)
+		{
+			newEdges.add(new Edge(edge));
+		}
+		return newEdges;
+	}
+
+	/**
+	* Returns the total weight of the graph's edges.
+	* @return An integer representing the total weight of the edges of the graph.
+	*/
+	public int totalWeight()
+	{
+		int total = 0;
+		for(Edge e : this.edges)
+		{
+			total += e.weight;
+		}
+		return total;
+	}
+
 	/* * * * * * * * * * * * * * * * * * * * * * * *
 	* 				Mutators
 	* * * * * * * * * * * * * * * * * * * * * * * */
@@ -171,6 +201,7 @@ public class Graph implements GraphInterface
 	public void addEdge(Vertex end1, Vertex end2, int weight)
 	{
 		Edge edge = new Edge(end1, end2, weight);
+		this.edges.add(edge);
 		end1.edges.add(edge);
 		end2.edges.add(edge);
 	}
@@ -185,5 +216,132 @@ public class Graph implements GraphInterface
 		{
 			vert.sortEdges();
 		}
+	}
+
+	/**
+	* Sorts the edges list of the current graph instance.
+	* @output The edges list of this graph will be sorted in ascending order of weight.
+	*/
+	public void sortThisEdges()
+	{
+		int listSize = this.edges.size();
+		EdgeWeightComparator comp = new EdgeWeightComparator();
+		PriorityQueue<Edge> pqueue = new PriorityQueue<Edge>(listSize, new EdgeWeightComparator());
+		while(this.edges.size() != 0)
+		{
+			pqueue.add(this.edges.removeFirst());
+		}
+
+		while(pqueue.size() != 0)
+		{
+			Edge e = pqueue.poll();
+			this.edges.add(e);
+		}
+	}
+
+	/* * * * * * * * * * * * * * * * * * * * * * * *
+	* 				Public static functions  
+	* * * * * * * * * * * * * * * * * * * * * * * */
+
+	/**
+	* Creates a new graph that adheres to the properties of an MST that is a subgraph of the input graph.
+	* @param graph The graph from which to create the MST.
+	* @return A graph that adheres to the properties of an MST that contains all the verticies of the input graph.
+	*/
+	public static Graph baruvkaMST(Graph graph)
+	{
+		// Create a subgraph mst
+		Graph t = createSubgraph(graph);
+		// Create component list of t
+		LinkedList<Component> compSet = Component.newCompSet(t);
+		// Get new edges list of graph
+		LinkedList<Edge> edges = graph.copyEdges();
+
+		// If E.size of t is less than (V.size - 1) of graph, t is not an mst
+		while(t.edges.size() <= graph.verts.size() - 1 && compSet.size() > 1)
+		{
+			// Get the lowest weighted edge and it's endpoints
+			Edge edge = edges.poll();
+			Vertex src = edge.endpoint1;
+			Vertex dest = edge.endpoint2;			
+
+			// Find the index of the components that contain the endpoints
+			int srcIndex = indexOfComponent(compSet, src);
+			int destIndex = indexOfComponent(compSet, dest);
+
+			// If the endpoints are in the same component, skip this edge and continue.
+			if(srcIndex == destIndex)
+				continue;
+
+			Component srcComp;
+			Component destComp;
+			// Make sure verticies exist in the compSet
+			if(srcIndex > -1 && destIndex > -1)
+			{
+				srcComp = compSet.remove(srcIndex);
+				//Make sure were removing the correct destination index after removing source index.
+				// (If we remove srcIndex that is before destIndex in the list, it changes the index of destIndex)
+				if(destIndex > srcIndex)
+					destComp = compSet.remove(destIndex - 1);
+				else
+					destComp = compSet.remove(destIndex);
+			}
+			else
+			{
+				System.out.println("Source or destination index is -1");
+				continue;
+			}
+
+			// Merge the destination component into the source component now that they are connected by the new edge.
+			srcComp.mergeComponent(destComp);
+
+			// Add merged component back to compSet
+			compSet.add(srcComp);
+
+			// Add edge to the mst.
+			t.edges.add(edge);
+		}
+
+		// Return the completed mst
+		return t;
+	}
+
+	/**
+	* Duplicates the graph g and creates a new graph that contains only the verticies from g.
+	* @param g The graph to be duplicated.
+	* @return The duplicated subgraph that contains all the same verticies as g.
+	*/
+	public static Graph createSubgraph(Graph g)
+	{
+		Graph newSubgraph = new Graph();
+		for(Vertex vert : g.verts)
+		{
+			newSubgraph.verts.add(vert);
+		}
+		return newSubgraph;
+	}
+
+	/**
+	* Gets the index of the component that contains the input vertex. Returns -1 of vertex doesn't exist in set.
+	* @param compSet The set of components that should contain the search vertex.
+	* @param searchVert The vertex to find in the compSet.
+	* @return An integer representing the index of the component in the set that contains the input vertex.
+	*/
+	public static int indexOfComponent(LinkedList<Component> compSet, Vertex searchVert)
+	{
+		int index = 0;
+		for(Component comp : compSet)
+		{
+			for(Vertex vert : comp.getVertSet())
+			{
+				if(vert.name.equals(searchVert.name))
+				{
+					//System.out.println("GOOGLY: " + index);
+					return index;
+				}
+			}
+			index++;
+		}
+		return -1;
 	}
 }

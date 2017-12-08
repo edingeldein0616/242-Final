@@ -1,0 +1,124 @@
+************************************************************************
+*************************Minimum Spanning Tree**************************
+************************************************************************
+
+Roads of the Minimum spanning tree: 
+
+	1-> (Washington, D.C. - Baltimore) : 39
+	2-> (Orlando - Daytona Beach) : 58
+	3-> (Jacksonville - Lake City) : 65
+	4-> (Kansas City - Topeka) : 65
+	5-> (Wilmington - Myrtle Beach) : 71
+	6-> (Grand Forks - Fargo) : 76
+	7-> (Milwaukee - Madison) : 78
+	8-> (Orlando - Tampa) : 84
+	9-> (Chicago - Milwaukee) : 91
+	10-> (Montgomery - Birmingham) : 92
+	11-> (Charleston, SC - Myrtle Beach) : 98
+	12-> (Baltimore - Philadelphia) : 98
+	13-> (Norfolk - Richmond) : 99
+	14-> (New York City - Philadelphia) : 99
+	15-> (Jacksonville - Daytona Beach) : 99
+	16-> (Boston - Hartford) : 101
+	17-> (Cincinnati - Louisville) : 102
+	18-> (Denver - Cheyenne) : 102
+	19-> (Boston - Portland, ME) : 103
+	20-> (Harrisburg - Philadelphia) : 105
+	21-> (Bismarck - Minot) : 106
+	22-> (Charleston, SC - Savannah) : 108
+	23-> (Washington, D.C. - Richmond) : 108
+	24-> (Cincinnati - Indianapolis) : 108
+	25-> (Cincinnati - Columbus) : 109
+	26-> (Tallahassee - Lake City) : 111
+	27-> (Phoenix - Tucson) : 112
+	28-> (Portland, OR - Eugene) : 115
+	29-> (Helena - Missoula) : 116
+	30-> (Los Angeles - San Diego) : 118
+	31-> (New York City - Hartford) : 118
+	32-> (Las Vegas - St. George) : 122
+	33-> (Boise - Twin Falls) : 123
+	34-> (Eagle Pass - Laredo) : 124
+	35-> (Raleigh - Wilmington) : 127
+	36-> (Portland, ME - Bangor) : 132
+	37-> (Binghamton - Albany) : 137
+	38-> (Topeka - Wichita) : 138
+	39-> (Los Angeles - Barstow) : 138
+	40-> (Memphis - Little Rock) : 138
+	41-> (Jacksonville - Savannah) : 138
+	42-> (Phoenix - Flagstaff) : 141
+	43-> (Cleveland - Pittsburgh) : 141
+	44-> (San Antonio - Eagle Pass) : 142
+	45-> (Liberal - Oakley) : 143
+	46-> (Omaha - Des Moines) : 143
+	47-> (Cleveland - Columbus) : 146
+	48-> (Rawlins - Cheyenne) : 146
+	49-> (Atlanta - Birmingham) : 149
+	50-> (Minneapolis - Duluth) : 152
+	51-> (New Orleans - Mobile) : 153
+	52-> (Las Vegas - Barstow) : 155
+	53-> (Oklahoma City - Wichita) : 156
+	54-> (Raleigh - Richmond) : 156
+	55-> (Miami - Key West) : 156
+	56-> (Detroit - Grand Rapids) : 157
+	57-> (North Platte - Oakley) : 158
+	58-> (New York City - Albany) : 160
+	59-> (Omaha - Topeka) : 163
+	60-> (Amarillo - Liberal) : 164
+	61-> (Reno - Winnemucca) : 164
+	62-> (Liberal - Lamar) : 168
+	63-> (Buffalo, WY - Billings) : 168
+	64-> (Kansas City - Springfield) : 170
+	65-> (Montgomery - Mobile) : 171
+	66-> (Detroit - Cleveland) : 173
+	67-> (Rapid City - Pierre) : 174
+	68-> (Omaha - Sioux Falls) : 175
+	69-> (Charlotte - Raleigh) : 175
+	70-> (Chicago - Indianapolis) : 177
+	71-> (Knoxville - Nashville) : 177
+	72-> (Nashville - Louisville) : 180
+	73-> (Portland, OR - Seattle) : 180
+	74-> (New Orleans - Jackson) : 183
+	75-> (Nashville - Birmingham) : 192
+	76-> (San Francisco - Yosemite Village) : 193
+	77-> (Bismarck - Fargo) : 194
+	78-> (Buffalo, NY - Cleveland) : 194
+	79-> (Spokane - Missoula) : 198
+	80-> (San Antonio - Houston) : 201
+	81-> (Cincinnati - Charleston, W.VA) : 202
+	82-> (Brownsville - Laredo) : 204
+	83-> (Denver - Lamar) : 206
+	84-> (Billings - Malta) : 206
+	85-> (Memphis - Nashville) : 208
+	86-> (Dallas - Oklahoma City) : 208
+	87-> (Tallahassee - Montgomery) : 208
+	88-> (Liberal - Wichita) : 209
+	89-> (Bismarck - Pierre) : 209
+	90-> (Boise - Riley) : 210
+	91-> (Reno - Yosemite Village) : 213
+	92-> (Rapid City - Buffalo, WY) : 216
+	93-> (Helena - Old Faithful) : 216
+	94-> (Little Rock - Springfield) : 219
+	95-> (Salt Lake City - Twin Falls) : 222
+	96-> (St. Louis - Springfield) : 224
+	97-> (Amarillo - Big Spring) : 224
+	98-> (Riley - Eugene) : 230
+	99-> (Albuquerque - Springerville) : 233
+	100-> (Phoenix - Springerville) : 236
+	101-> (Buffalo, WY - Rawlins) : 236
+	102-> (Orlando - Miami) : 236
+	103-> (Dallas - Houston) : 237
+	104-> (Minneapolis - Fargo) : 242
+	105-> (Billings - Helena) : 243
+	106-> (Twin Falls - Ely) : 255
+	107-> (Boise - Winnemucca) : 257
+	108-> (Flagstaff - Cortez) : 263
+	109-> (El Paso - Albuquerque) : 270
+	110-> (Spokane - Seattle) : 276
+	111-> (Las Vegas - Ely) : 282
+	112-> (Flagstaff - St. George) : 286
+	113-> (Portland, OR - Crescent City) : 346
+
+Total weight of the minimum spanning tree: 18491
+
+Total number of roads in the minimum spanning tree: 113
+
